@@ -1,6 +1,9 @@
 package RoniCorp.kirjoitin.model;
 
 public abstract class Element {
+	//Tinker with the rules of prompting a position for an element, the space will be 2d so everything can easily be done by math.
+	//What happens if the Element is too big, force a new page?
+	
 	protected boolean selected;
 	protected int width;
 	protected int length;

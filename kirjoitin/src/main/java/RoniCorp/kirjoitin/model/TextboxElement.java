@@ -2,6 +2,8 @@ package RoniCorp.kirjoitin.model;
 
 public class TextboxElement extends Element {
 	
+	//draw only passes on the text and UI renders?
+	
 	private String text;
 	
 	public TextboxElement () {
