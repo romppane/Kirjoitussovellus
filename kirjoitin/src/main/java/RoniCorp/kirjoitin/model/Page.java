@@ -61,7 +61,7 @@ public class Page implements Page_IF {
 	}
 
 	public void removeElement(Element element) {
-		// TODO Auto-generated method stub
+		elements.remov
 
 	}
 

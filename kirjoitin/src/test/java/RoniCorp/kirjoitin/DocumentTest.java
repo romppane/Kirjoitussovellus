@@ -35,34 +35,43 @@ public class DocumentTest {
 			order += p.getAxelX()+ " ";
 		}
 		
+		System.out.println(order);
 		assertTrue(order.equals("1 2 3 4 5 "), "The pages do not initialize in right order");
+		order = "";
 		
 		
 		doc.movePage(p5, p1);
 		for (Page p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
+		System.out.println(order);
 		assertTrue(order.equals("5 1 2 3 4 "), "Switching last page to first doesn't function properly");
+		order = "";
 		
 		
 		doc.movePage(p5, null);
 		for (Page p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
+		System.out.println(order);
 		assertTrue(order.equals("1 2 3 4 5 "), "Does the page go as the last page?");
+		order = "";
 		
 		
 		doc.movePage(p3, p3);
 		for (Page p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
+		System.out.println(order);
 		assertTrue(order.equals("1 2 3 4 5 "), "Switching the page with it's own position shouldn't do anything");
+		order = "";
 		
 		
 		doc.movePage(p5, p3);
 		for (Page p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
+		System.out.println(order);
 		assertTrue(order.equals("1 2 5 3 4 "), "Swithching page to the middle isn't functioning correctly");
 	}
 

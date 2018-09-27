@@ -70,17 +70,25 @@ public class Document implements Document_IF {
 	}
 
 	public void removePage(Page page) {
-		// TODO Auto-generated method stub
 		pages.remove(page);
 	}
 
 	public void movePage(Page toMove, Page toGive) {
 		// Select 2 pages, the one you want to move and the one which will give it's old position to the new page!
 		// Pages begind will move 1 back.
-		int oldPos = pages.indexOf(toMove);
-		int newPos = pages.indexOf(toGive);
-		//Collections.swap(pages, arg1, arg2);
-
+		if(toMove != toGive) {
+			if(toGive == null) {
+				pages.remove(toMove);
+				pages.add(toMove);
+			}
+			else {
+				pages.remove(toMove);
+				int newPos = pages.indexOf(toGive);
+				pages.add(newPos, toMove);
+			}
+			
+		}
+		
 	}
 
 
@@ -91,7 +99,7 @@ public class Document implements Document_IF {
 
 	public void loadDocument() {
 		// TODO Auto-generated method stub
-		//read a saved XML file and restore the worksspace as it should be
+		//read a saved XML file and restore the workspace as it should be
 	}
 
 
