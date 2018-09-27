@@ -10,7 +10,10 @@ public class Page implements Page_IF {
 	private boolean selected;
 	
 	public Page() {
-		
+		page_elements = new ArrayList();
+		axelX = 71;
+		axelY = 100;
+		selected = true;
 	}
 
 	public Page(int axelX, int axelY) {
@@ -56,17 +59,19 @@ public class Page implements Page_IF {
 	}
 
 	public void addElement(Element type) {
-		// TODO Auto-generated method stub
+		page_elements.add(type);
 
 	}
 
 	public void removeElement(Element element) {
-		elements.remov
+		page_elements.remove(element);
 
 	}
 
 	public void flipToHorizontal() {
-		// TODO Auto-generated method stub
+		int temp = axelX;
+		axelX = axelY;
+		axelY = temp;
 
 	}
 

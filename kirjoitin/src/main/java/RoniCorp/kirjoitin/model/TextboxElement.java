@@ -3,6 +3,8 @@ package RoniCorp.kirjoitin.model;
 import java.util.ArrayList;
 
 public class TextboxElement extends Element {
+	
+	private String text;
 
 	@Override
 	void movePosition() {
