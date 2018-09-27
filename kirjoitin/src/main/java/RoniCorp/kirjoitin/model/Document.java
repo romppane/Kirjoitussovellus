@@ -7,7 +7,7 @@ import java.util.Date;
 public class Document implements Document_IF {
 	
 	private ArrayList<Date> modified;
-	private ArrayList<Page> pages;
+	private ArrayList<Page_IF> pages;
 	//References are likely to get implemented later
 	//private ArrayList<String> references;
 	//Margins as the percentage compared to the box
@@ -15,7 +15,7 @@ public class Document implements Document_IF {
 
 	public Document() {
 		modified = new ArrayList<Date>();
-		pages = new ArrayList<Page>();
+		pages = new ArrayList<Page_IF>();
 		margins = new ArrayList<Double>();
 	}
 	
@@ -27,11 +27,11 @@ public class Document implements Document_IF {
 		this.modified = modified;
 	}
 
-	public ArrayList<Page> getPages() {
+	public ArrayList<Page_IF> getPages() {
 		return pages;
 	}
 
-	public void setPages(ArrayList<Page> pages) {
+	public void setPages(ArrayList<Page_IF> pages) {
 		this.pages = pages;
 	}
 
@@ -43,7 +43,7 @@ public class Document implements Document_IF {
 		this.margins = margins;
 	}
 
-	public Document(ArrayList<Date> modified, ArrayList<Page> pages, ArrayList<Double> margins) {
+	public Document(ArrayList<Date> modified, ArrayList<Page_IF> pages, ArrayList<Double> margins) {
 		this.modified = modified;
 		this.pages = pages;
 		this.margins = margins;
@@ -69,13 +69,13 @@ public class Document implements Document_IF {
 		// TODO Auto-generated method stub
 	}
 
-	public void removePage(Page page) {
+	public void removePage(Page_IF page) {
 		pages.remove(page);
 	}
 
-	public void movePage(Page toMove, Page toGive) {
+	public void movePage(Page_IF toMove, Page_IF toGive) {
 		// Select 2 pages, the one you want to move and the one which will give it's old position to the new page!
-		// Pages begind will move 1 back.
+		// Pages behind will move 1 back.
 		if(toMove != toGive) {
 			if(toGive == null) {
 				pages.remove(toMove);

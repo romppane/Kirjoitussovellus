@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import RoniCorp.kirjoitin.model.Document;
 import RoniCorp.kirjoitin.model.DocumentFactory;
 import RoniCorp.kirjoitin.model.Page;
+import RoniCorp.kirjoitin.model.Page_IF;
 
 public class DocumentTest {
 	
@@ -19,19 +20,19 @@ public class DocumentTest {
 		//after every switch make a verification string from the positions.
 
 		
-		DocumentFactory factory = new DocumentFactory();
+		DocumentFactory factory = DocumentFactory.getInstance();
 		Document doc = factory.createNewDocument();
 				
-		Page p1 = new Page(1,1);
-		Page p2 = new Page(2,2);
-		Page p3 = new Page(3,3);
-		Page p4 = new Page(4,4);
-		Page p5 = new Page(5,5);
+		Page_IF p1 = new Page(1,1);
+		Page_IF p2 = new Page(2,2);
+		Page_IF p3 = new Page(3,3);
+		Page_IF p4 = new Page(4,4);
+		Page_IF p5 = new Page(5,5);
 		String order = "";
 		
 		doc.getPages().add(p1); doc.getPages().add(p2);doc.getPages().add(p3);doc.getPages().add(p4);doc.getPages().add(p5);
 		
-		for (Page p : doc.getPages()) {
+		for (Page_IF p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
 		
@@ -41,7 +42,7 @@ public class DocumentTest {
 		
 		
 		doc.movePage(p5, p1);
-		for (Page p : doc.getPages()) {
+		for (Page_IF p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
 		System.out.println(order);
@@ -50,7 +51,7 @@ public class DocumentTest {
 		
 		
 		doc.movePage(p5, null);
-		for (Page p : doc.getPages()) {
+		for (Page_IF p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
 		System.out.println(order);
@@ -59,7 +60,7 @@ public class DocumentTest {
 		
 		
 		doc.movePage(p3, p3);
-		for (Page p : doc.getPages()) {
+		for (Page_IF p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
 		System.out.println(order);
@@ -68,7 +69,7 @@ public class DocumentTest {
 		
 		
 		doc.movePage(p5, p3);
-		for (Page p : doc.getPages()) {
+		for (Page_IF p : doc.getPages()) {
 			order += p.getAxelX()+ " ";
 		}
 		System.out.println(order);
