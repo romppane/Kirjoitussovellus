@@ -1,27 +1,38 @@
 package RoniCorp.kirjoitin.model;
 
-import java.util.ArrayList;
-
 public class TextboxElement extends Element {
 	
 	private String text;
+	
+	public TextboxElement () {
+		
+	}
+	
+	
 
-	@Override
-	void movePosition() {
-		// TODO Auto-generated method stub
-
+	public TextboxElement(String text) {
+		super();
+		this.text = text;
 	}
 
-	@Override
-	void changeSize(ArrayList<Double> borders) {
-		// TODO Auto-generated method stub
 
+
+	public String getText() {
+		return text;
 	}
+
+
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
 
 	@Override
 	void drawElement() {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }

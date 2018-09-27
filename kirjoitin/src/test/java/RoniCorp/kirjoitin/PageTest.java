@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import RoniCorp.kirjoitin.model.Document;
 import RoniCorp.kirjoitin.model.DocumentFactory;
+import RoniCorp.kirjoitin.model.Element;
 import RoniCorp.kirjoitin.model.ElementFactory;
 import RoniCorp.kirjoitin.model.OriginalElementFactory;
 import RoniCorp.kirjoitin.model.Page;
@@ -34,6 +35,8 @@ public class PageTest {
 		// List will be used for reading the file on a device, and the order of showing objects is based on the list.
 		// Try to add from middle to first, second to last, switch the position of object with itself.
 		
+		//In order to recognize which Element in which, create proper constructors and give the elements some dummy data to play with.
+		
 		DocumentFactory docfactory = DocumentFactory.getInstance();
 		ElementFactory efactory = OriginalElementFactory.getInstance();
 		Document doc = docfactory.createNewDocument();
@@ -44,6 +47,10 @@ public class PageTest {
 		page.addElement(efactory.createTextElement());
 		page.addElement(efactory.createImageElement());
 		page.addElement(efactory.createImageElement());
+		
+		for(Element e : page.getElements()) {
+			System.out.println(e.toString());
+		}
 		
 	}
 

@@ -1,13 +1,38 @@
 package RoniCorp.kirjoitin.model;
 
-import java.util.ArrayList;
-
 public abstract class Element {
-	private boolean selected;
-	private ArrayList<Double> borders;
+	protected boolean selected;
+	protected int width;
+	protected int length;
+	protected int positionX;
+	protected int positionY;
 	
-	abstract void movePosition();
-	abstract void changeSize(ArrayList<Double> borders);
+	public void movePosition(int positionX, int positionY) {
+		this.positionX = positionX;
+		this.positionY = positionY;
+	}
+	
+	public int getPositionX() {
+		return positionX;
+	}
+	
+	public int getPositionY() {
+		return positionY;
+	}
+	
+	public void changeSize(int width, int length) {
+		this.width = width;
+		this.length = length;
+	}
+	
 	abstract void drawElement();
+	
+	public boolean getSelected() {
+		return selected;
+	}
+	
+	public void setSelected(Boolean selected) {
+		this.selected = selected;
+	}
 
 }
