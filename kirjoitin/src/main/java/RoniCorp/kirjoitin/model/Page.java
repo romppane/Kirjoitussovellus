@@ -10,14 +10,14 @@ public class Page implements Page_IF {
 	private boolean selected;
 	
 	public Page() {
-		elements = new ArrayList();
+		elements = new ArrayList<Element>();
 		axelX = 71;
 		axelY = 100;
 		selected = true;
 	}
 
 	public Page(int axelX, int axelY) {
-		elements = new ArrayList();
+		elements = new ArrayList<Element>();
 		this.axelX = axelX;
 		this.axelY = axelY;
 		selected = true;

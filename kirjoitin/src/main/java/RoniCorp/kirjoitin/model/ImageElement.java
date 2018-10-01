@@ -3,13 +3,12 @@ package RoniCorp.kirjoitin.model;
 
 public class ImageElement extends Element {
 	
-	//Create a Image to byte converter class!!
 	//Tinker with the next - previous situation, next should always be the new image added to the queue, but for the last one it's the first one
 	//Previous changes for the first image every time a new Image has been added so that the array goes around.
 	//Deleting Image will be a pain in the ass, but very do able with the help of Internet.
 	//Draw image only passes the image_data forward, and the UI renders?
 	
-	private byte[] image_data;
+	private String image_data;
 	private ImageElement next;
 	private ImageElement previous;
 
@@ -18,7 +17,7 @@ public class ImageElement extends Element {
 	}
 	
 	
-	public ImageElement(byte[] image_data) {
+	public ImageElement(String image_data) {
 		super();
 		this.image_data = image_data;
 	}
@@ -26,19 +25,19 @@ public class ImageElement extends Element {
 	
 
 
-	public ImageElement(byte[] image_data, ImageElement previous) {
+	public ImageElement(String image_data, ImageElement previous) {
 		super();
 		this.image_data = image_data;
 		this.previous = previous;
 	}
 
 
-	public byte[] getImage_data() {
+	public String getImage_data() {
 		return image_data;
 	}
 
 
-	public void setImage_data(byte[] image_data) {
+	public void setImage_data(String image_data) {
 		this.image_data = image_data;
 	}
 
